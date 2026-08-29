@@ -65,6 +65,12 @@
 9. **爸妈3分钟带法** — 不讲大道理，只讲步骤
 10. **来源说明** — 字源考据与方法论出处
 
+每张生成的 HTML 字卡底部都会保留创作者信息：
+
+- 创作者：**MQ 原住民**
+- 公众号：**MQ 的原住民计划**
+- 项目地址：[github.com/clover327/mq-hanzi-card](https://github.com/clover327/mq-hanzi-card)
+
 ## 方法论来源
 
 - **左民安《细说汉字》** — 字源依据
@@ -73,4 +79,8 @@
 
 ## 作者
 
-MQ · AI原住民计划
+**MQ 原住民**
+
+公众号：**MQ 的原住民计划**
+
+GitHub：[https://github.com/clover327/mq-hanzi-card](https://github.com/clover327/mq-hanzi-card)
