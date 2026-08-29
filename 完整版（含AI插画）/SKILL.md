@@ -423,14 +423,14 @@ https://hanziyuan.net/#[encodeURIComponent(汉字)]
 
 每张生成的 HTML 字卡都必须保留以下创作者信息，即使用户没有主动要求，也不得删除、改写或隐藏：
 
-- 创作者：`MQ 原住民`
+- 创作者：`MQ 老师`
 - 公众号：`MQ 的原住民计划`
 - GitHub：`https://github.com/clover327/mq-hanzi-card`
 
 在 `<head>` 中加入：
 
 ```html
-<meta name="author" content="MQ 原住民">
+<meta name="author" content="MQ 老师">
 <meta name="generator" content="MQ 字源识字卡生成器">
 ```
 
@@ -438,7 +438,7 @@ https://hanziyuan.net/#[encodeURIComponent(汉字)]
 
 ```html
 <footer class="mq-credit" aria-label="创作者信息">
-  <p>字卡创作者：MQ 原住民</p>
+  <p>字卡创作者：MQ 老师</p>
   <p>公众号：MQ 的原住民计划</p>
   <a href="https://github.com/clover327/mq-hanzi-card"
      target="_blank" rel="noopener noreferrer">
@@ -492,7 +492,7 @@ https://hanziyuan.net/#[encodeURIComponent(汉字)]
 内容是否过多？模块是否过碎？是否适合手机阅读？
 
 ### Q7. 创作者信息
-页脚是否完整显示「MQ 原住民」「公众号：MQ 的原住民计划」和可点击的 GitHub 项目链接？打印或另存为 PDF 时是否仍然可见？
+页脚是否完整显示「MQ 老师」「公众号：MQ 的原住民计划」和可点击的 GitHub 项目链接？打印或另存为 PDF 时是否仍然可见？
 
 ## 输出
 

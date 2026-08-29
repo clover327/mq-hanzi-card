@@ -67,7 +67,7 @@
 
 每张生成的 HTML 字卡底部都会保留创作者信息：
 
-- 创作者：**MQ 原住民**
+- 创作者：**MQ 老师**
 - 公众号：**MQ 的原住民计划**
 - 项目地址：[github.com/clover327/mq-hanzi-card](https://github.com/clover327/mq-hanzi-card)
 
@@ -79,7 +79,7 @@
 
 ## 作者
 
-**MQ 原住民**
+**MQ 老师**
 
 公众号：**MQ 的原住民计划**
 
