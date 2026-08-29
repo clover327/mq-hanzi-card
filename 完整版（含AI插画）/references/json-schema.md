@@ -6,14 +6,20 @@
 
 ```json
 {
+  "input_char": "",
   "char": "",
+  "simplified_char": "",
+  "traditional_char": "",
+  "script_variant": "",
+  "child_age": 0,
+  "age_band": "",
   "pinyin": "",
   "stroke_count": 0,
   "character_type": "",
   "radical": "",
   "structure": "",
-  "age_band": "5-8",
   "frequency_rank": 0,
+  "frequency_rank_basis_char": "",
 
   "core_origin": "",
   "original_meaning": "",
@@ -114,14 +120,20 @@
 ## 字段说明
 
 ### 基础信息
-- `char`：汉字
+- `input_char`：用户原始输入的汉字
+- `char`：按所选字形版本规范后的目标汉字
+- `simplified_char`：该含义对应的规范简体字
+- `traditional_char`：该含义对应的规范繁体字；一简对多繁时必须先按字义确定
+- `script_variant`：用户选择的字形版本，只能是 `simplified` 或 `traditional`
+- `child_age`：用户提供的孩子具体年龄，可为整数或小数
+- `age_band`：根据具体年龄归入的内容难度区间
 - `pinyin`：带声调拼音
-- `stroke_count`：笔画数
+- `stroke_count`：规范后目标字的笔画数
 - `character_type`：造字类型（象形 / 会意 / 形声 / 指事 / 假借）
 - `radical`：部首
 - `structure`：结构类型（左右 / 上下 / 包围 / 独体 等）
-- `age_band`：目标年龄段
 - `frequency_rank`：字频排名（从 `hanzi_freq.csv` 查询，共 9901 字）
+- `frequency_rank_basis_char`：实际用于查询字频的字；繁体字无记录时填写对应简体字
 
 ### 字源信息
 - `core_origin`：一句话概括字源核心
@@ -157,10 +169,12 @@
 ## 填写规则
 
 1. 所有字段都必须填写
-2. `child_story` 必须是完整段落，不是几个关键词
-3. `word_family` 优先高频词
-4. `radical_family` 和 `phonetic_family` 不要乱填；不适用时保留空值
-5. `etymology_relations` 只保留最有教学价值的，来源可参考左民安
-6. `confusable_chars` 只保留最常见、最值得提醒的
-7. `parent_script` 必须是行动步骤，不要空泛教育口号
-8. `reading_context.sentences` 必须生活化、口语化、适合朗读
+2. `child_age` 和 `script_variant` 必须来自用户明确提供的信息，不得使用默认值
+3. 除正式名称、网址和古文字原形外，所有面向用户的文本必须与 `script_variant` 一致
+4. `child_story` 必须是完整段落，不是几个关键词
+5. `word_family` 优先高频词
+6. `radical_family` 和 `phonetic_family` 不要乱填；不适用时保留空值
+7. `etymology_relations` 只保留最有教学价值的，来源可参考左民安
+8. `confusable_chars` 只保留最常见、最值得提醒的
+9. `parent_script` 必须是行动步骤，不要空泛教育口号
+10. `reading_context.sentences` 必须生活化、口语化、适合朗读
