@@ -425,6 +425,7 @@ https://hanziyuan.net/#[encodeURIComponent(汉字)]
 
 - 创作者：`MQ 老师`
 - 公众号：`MQ 的原住民计划`
+- 公众号文章：`https://mp.weixin.qq.com/s/gn-noPAs4XCc3bXD2_xcsQ`
 - GitHub：`https://github.com/clover327/mq-hanzi-card`
 
 在 `<head>` 中加入：
@@ -439,7 +440,13 @@ https://hanziyuan.net/#[encodeURIComponent(汉字)]
 ```html
 <footer class="mq-credit" aria-label="创作者信息">
   <p>字卡创作者：MQ 老师</p>
-  <p>公众号：MQ 的原住民计划</p>
+  <p>
+    公众号：
+    <a href="https://mp.weixin.qq.com/s/gn-noPAs4XCc3bXD2_xcsQ"
+       target="_blank" rel="noopener noreferrer">
+      MQ 的原住民计划
+    </a>
+  </p>
   <a href="https://github.com/clover327/mq-hanzi-card"
      target="_blank" rel="noopener noreferrer">
     github.com/clover327/mq-hanzi-card
@@ -492,7 +499,7 @@ https://hanziyuan.net/#[encodeURIComponent(汉字)]
 内容是否过多？模块是否过碎？是否适合手机阅读？
 
 ### Q7. 创作者信息
-页脚是否完整显示「MQ 老师」「公众号：MQ 的原住民计划」和可点击的 GitHub 项目链接？打印或另存为 PDF 时是否仍然可见？
+页脚是否完整显示「MQ 老师」、可点击并指向指定微信文章的「公众号：MQ 的原住民计划」，以及可点击的 GitHub 项目链接？打印或另存为 PDF 时是否仍然可见？
 
 ## 输出
 
