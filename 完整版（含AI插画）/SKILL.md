@@ -1,6 +1,6 @@
 ---
 name: mq-hanzi-card
-description: 字源识字卡生成——根据汉字、孩子年龄和简体/繁体选择，生成融合左民安字源考据与魏老师识字方法论、带 AI 插画的儿童字源识字卡（HTML）。
+description: 字源识字卡生成——根据汉字、孩子年龄和简体/繁体选择，生成融合左民安字源考据与魏老师识字方法论的儿童字源识字卡（HTML）。头图插画为可选项，默认不生成。
 ---
 
 # 字源识字卡生成器
@@ -103,6 +103,7 @@ description: 字源识字卡生成——根据汉字、孩子年龄和简体/繁
 - 字频表找不到繁体目标字时，查询其对应简体字的排名，并在页面标注「对应简体字常用第 N 位」，不得把缺失误写成零或编造排名。
 
 可选参数（用户不提供则用默认值）：
+- **是否生成 AI 头图插画：默认 `false`（不生成）**。只有用户明确说「要头图」「画一张头图」「带插画」时才开启。开启需要 `scripts/image_generator.py` 里配置了可用的 API Key；大多数用户没有 Key，所以默认关闭，不要主动追问要不要画
 - 语气：`warm` / `playful` / `calm`，默认 `warm`
 - 是否包含录音模块：默认 `true`
 - 输出目录：默认当前工作目录
@@ -230,9 +231,11 @@ https://hanziyuan.net/#[汉字的URL编码]
 
 所有字段都必须填写，包括 `input_char`、`char`、`simplified_char`、`traditional_char`、`child_age`、`age_band` 和 `script_variant`。不适用的字段保留空结构，不要缺字段。
 
-### 第七步：生成头图
+### 第七步：生成头图（可选，默认跳过）
 
-调用 Gemini Image Pro Python 脚本生成头图。**禁止用 SVG 或代码绘图代替。**
+**默认不生成头图。** 未开启时，Hero 区域不放图片，只展示大字、拼音、标签和笔顺，直接跳到第八步。不要用 SVG、CSS 或代码绘图去凑一张「假头图」。
+
+只有用户明确要求头图时，才调用 Gemini Image Pro Python 脚本生成。开启后**禁止用 SVG 或代码绘图代替**。若脚本报错（无 Key、额度不足、网络失败），告知用户原因，退回无头图版本继续完成字卡，不要中断。
 
 工作流：
 1. 根据字的本义撰写图像生成 prompt（英文，儿童插画风格）
@@ -281,7 +284,7 @@ Warm watercolor illustration style for children, soft colors, no other text.
 
 ### M1. Hero 头图
 
-展示：汉字、拼音、造字类型、笔画数、头图
+展示：汉字、拼音、造字类型、笔画数；开启头图时再加插画（默认不带）
 目标：建立第一印象，让孩子对字产生整体感觉
 
 ### M2. 字源故事
@@ -531,9 +534,9 @@ https://hanziyuan.net/#[encodeURIComponent(汉字)]
 - 简体：`{字}_简体_v5.html`
 - 繁体：`{字}_繁體_v5.html`
 
-### 附件
-- 简体：`{pinyin}_简体_illustration.jpeg`、`{pinyin}_简体_v5.json`（JSON 可选）
-- 繁体：`{pinyin}_繁體_illustration.jpeg`、`{pinyin}_繁體_v5.json`（JSON 可选）
+### 附件（均可选）
+- 简体：`{pinyin}_简体_v5.json`；开启头图时另有 `{pinyin}_简体_illustration.jpeg`
+- 繁体：`{pinyin}_繁體_v5.json`；开启头图时另有 `{pinyin}_繁體_illustration.jpeg`
 
 ## 使用方式
 
